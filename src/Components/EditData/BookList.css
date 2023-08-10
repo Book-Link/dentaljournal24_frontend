@@ -1,0 +1,22 @@
+.bookList {
+    text-align: center;
+  }
+  .bookListHeader {
+    font-size: 3vw;
+    font-weight: bold;
+  }
+  .pause_btn {
+    border: 1px solid var(--green);
+  }
+  .stop {
+    background-color: #ff0000 !important;
+  }
+  .active {
+    background-color: #008000 !important;
+  }
+  
+  /* ************* All User */
+  .dr_name::before {
+    content: "Dr. ";
+  }
+  
