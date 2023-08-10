@@ -25,7 +25,7 @@ const BooklistEdit = () => {
         setLoading(true);
 
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/getBookData"
+          `${process.env.REACT_APP_BACKEND_URL}/getBookData`
         );
 
         const data = await response.json();
@@ -40,7 +40,7 @@ const BooklistEdit = () => {
 
   //delete the book
   const handleBookDelete = (id) => {
-    fetch(`https://server.gynaecologyjournal.org/bookDelete/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/bookDelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -57,7 +57,7 @@ const BooklistEdit = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://server.gynaecologyjournal.org/singleBook/${singleBookId}`
+        `${process.env.REACT_APP_BACKEND_URL}/singleBook/${singleBookId}`
       );
       const data = await response.json();
       setSingleBook(data);

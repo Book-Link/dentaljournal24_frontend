@@ -38,7 +38,7 @@ const ViewPdf = () => {
   };
 
   ////getting books data
-  const booksData = "https://server.gynaecologyjournal.org/getBookData";
+  const booksData = `${process.env.REACT_APP_BACKEND_URL}/getBookData`;
   useEffect(() => {
     axios.get(booksData).then((response) => {
       setBooks(response.data);

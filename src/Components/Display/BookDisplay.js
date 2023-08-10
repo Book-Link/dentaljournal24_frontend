@@ -64,7 +64,7 @@ const BookDisplay = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://server.gynaecologyjournal.org/getBookData")
+      .get(`${process.env.REACT_APP_BACKEND_URL}/getBookData`)
       .then((response) => {
         setBooks(response.data);
         setFilteredBooks(response.data);
@@ -76,7 +76,7 @@ const BookDisplay = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://server.gynaecologyjournal.org/DisplayBookTopImage")
+      .get(`${process.env.REACT_APP_BACKEND_URL}/DisplayBookTopImage`)
       .then((response) => {
         setTopBannerImg(response.data);
         setLoading(false);
@@ -91,7 +91,7 @@ const BookDisplay = () => {
   //logout and status into logout
   const handeLogoutStatusChange = async () => {
     // remove the login and session data from storage and redirect to the home page
-    sessionStorage.removeItem("loginGynaecologyJournalData");
+    sessionStorage.removeItem("loginDentalJournal24Data");
     sessionStorage.removeItem("pcData");
     sessionStorage.removeItem("mblData");
     setTimeout(() => {

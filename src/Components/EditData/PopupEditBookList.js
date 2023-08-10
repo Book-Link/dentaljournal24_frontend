@@ -26,7 +26,7 @@ const PopupEditBookList = ({ singleBook }) => {
       downloadBookLink: downloadBookLinkRef?.current?.value,
     };
 
-    fetch(`https://server.gynaecologyjournal.org/updateBook/${_id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/updateBook/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

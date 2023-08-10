@@ -37,7 +37,7 @@ const NewSignup = () => {
     // add product info at mongodb
     try {
       setLoading(true);
-      const url = "https://server.gynaecologyjournal.org/addSignupData";
+      const url = `${process.env.REACT_APP_BACKEND_URL}/addSignupData`;
       const option = {
         method: "POST",
         body: JSON.stringify(singupData),

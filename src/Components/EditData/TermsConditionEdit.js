@@ -17,7 +17,7 @@ const TermsConditionEdit = () => {
       description: showDescription,
     };
     // INSERT A ADMIN AT THE DATABASE
-    fetch("https://server.gynaecologyjournal.org/addTermsCondition", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/addTermsCondition`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(termsConditionData),
@@ -38,7 +38,7 @@ const TermsConditionEdit = () => {
         setLoading(true);
 
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/getTermsCondition"
+          `${process.env.REACT_APP_BACKEND_URL}/getTermsCondition`
         );
 
         const data = await response.json();
@@ -53,7 +53,7 @@ const TermsConditionEdit = () => {
 
   //delete terms and condition
   const handleTermsConditionRemove = (id) => {
-    fetch(`https://server.gynaecologyjournal.org/termsConditiondelete/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/termsConditiondelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

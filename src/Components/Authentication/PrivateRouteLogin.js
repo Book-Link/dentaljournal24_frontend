@@ -2,7 +2,7 @@ import { Redirect, Route } from "react-router-dom";
 
 const PrivateRouteLogin = ({ children, ...rest }) => {
   const loginData = JSON.parse(
-    sessionStorage.getItem("loginGynaecologyJournalData")
+    sessionStorage.getItem("loginDentalJournal24Data")
   );
 
   return (

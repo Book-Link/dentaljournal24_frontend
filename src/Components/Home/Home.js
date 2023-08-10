@@ -55,7 +55,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://server.gynaecologyjournal.org/getFrontPageTopImage")
+      .get(`${process.env.REACT_APP_BACKEND_URL}/getFrontPageTopImage`)
       .then((response) => {
         setTopImg(response.data);
       });
@@ -63,7 +63,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://server.gynaecologyjournal.org/getFrontPageMiddleImage")
+      .get(`${process.env.REACT_APP_BACKEND_URL}/getFrontPageMiddleImage`)
       .then((response) => {
         setMidImg(response.data);
       });
@@ -71,7 +71,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://server.gynaecologyjournal.org/getFrontPageDisclaimer")
+      .get(`${process.env.REACT_APP_BACKEND_URL}/getFrontPageDisclaimer`)
       .then((response) => {
         setDisclaimer(response.data);
       });

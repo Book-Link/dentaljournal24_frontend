@@ -10,7 +10,7 @@ const AllUser = () => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/getAllUser"
+          `${process.env.REACT_APP_BACKEND_URL}/getAllUser`
         );
         const data = await response.json();
         setUser(data);
@@ -25,7 +25,7 @@ const AllUser = () => {
   const handleUserDelete = async (id) => {
     try {
       const response = await fetch(
-        `https://server.gynaecologyjournal.org/userDelete/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/userDelete/${id}`,
         {
           method: "DELETE",
         }
@@ -49,7 +49,7 @@ const AllUser = () => {
   const handleUserUpdate = async (value, id) => {
     try {
       const response = await fetch(
-        `https://server.gynaecologyjournal.org/userUpdate/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/userUpdate/${id}`,
         {
           method: "PATCH",
           headers: {

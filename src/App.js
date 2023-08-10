@@ -24,7 +24,7 @@ import AllUser from "./Components/EditData/AllUser";
 
 function App() {
   //condition if localstroage.length home otherwise loginpage
-  const loginData = sessionStorage.getItem("loginGynaecologyJournalData");
+  const loginData = sessionStorage.getItem("loginDentalJournal24Data");
   return (
     <Router>
       <Switch>

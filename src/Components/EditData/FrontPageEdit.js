@@ -24,7 +24,7 @@ const FrontPageEdit = () => {
     };
     // INSERT top image ADMIN AT THE DATABASE
 
-    fetch("https://server.gynaecologyjournal.org/addFrontPageTopImage", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/addFrontPageTopImage`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(frontPageTopBanner),
@@ -47,7 +47,7 @@ const FrontPageEdit = () => {
     };
     // INSERT A middle image AT THE DATABASE
 
-    fetch("https://server.gynaecologyjournal.org/addFrontPageMiddleImage", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/addFrontPageMiddleImage`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(frontPageMiddleBanner),
@@ -71,7 +71,7 @@ const FrontPageEdit = () => {
 
     // INSERT A disclaimer AT THE DATABASE
 
-    fetch("https://server.gynaecologyjournal.org/addFrontPageDisclaimer", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/addFrontPageDisclaimer`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(frontPageDisclaimer),
@@ -93,7 +93,7 @@ const FrontPageEdit = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/getFrontPageTopImage"
+          `${process.env.REACT_APP_BACKEND_URL}/getFrontPageTopImage`
         );
         const data = await response.json();
         setTopImgData(data);
@@ -111,7 +111,7 @@ const FrontPageEdit = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/getFrontPageMiddleImage"
+          `${process.env.REACT_APP_BACKEND_URL}/getFrontPageMiddleImage`
         );
         const data = await response.json();
         setMidImgData(data);
@@ -129,7 +129,7 @@ const FrontPageEdit = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/getFrontPageDisclaimer"
+          `${process.env.REACT_APP_BACKEND_URL}/getFrontPageDisclaimer`
         );
         const data = await response.json();
         setDisclaimerData(data);
@@ -147,7 +147,7 @@ const FrontPageEdit = () => {
   const handleTopImageRemove = (id) => {
     // console.log('deleted',id);
 
-    fetch(`https://server.gynaecologyjournal.org/topImgdelete/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/topImgdelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -163,7 +163,7 @@ const FrontPageEdit = () => {
   const handlemidImageRemove = (id) => {
     // console.log('deleted',id);
 
-    fetch(`https://server.gynaecologyjournal.org/middleImgdelete/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/middleImgdelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -179,7 +179,7 @@ const FrontPageEdit = () => {
   const handleDisclaimerRemove = (id) => {
     // console.log('deleted',id);
 
-    fetch(`https://server.gynaecologyjournal.org/disclaimerDelete/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/disclaimerDelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -28,7 +28,7 @@ const TermsCondition = () => {
         setLoading(true);
 
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/getTermsCondition"
+          `${process.env.REACT_APP_BACKEND_URL}/getTermsCondition`
         );
 
         const data = await response.json();

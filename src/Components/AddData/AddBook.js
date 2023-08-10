@@ -28,7 +28,7 @@ const AddBook = () => {
     console.log(bookData);
 
     // INSERT top image ADMIN AT THE DATABASE
-    fetch("https://server.gynaecologyjournal.org/addBookData", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/addBookData`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(bookData),

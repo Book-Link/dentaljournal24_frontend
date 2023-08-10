@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://server.gynaecologyjournal.org/getMatchedEmailData?email=" +
+        `${process.env.REACT_APP_BACKEND_URL}/getMatchedEmailData?email=` +
           userEmail
       );
       const data = await response.json();
@@ -31,8 +31,7 @@ const ForgotPassword = () => {
         emailjs
           .send("service_jqrmc5x", "template_56tkxi7", {
             to_email: userEmail,
-            password_reset_link:
-              "https://server.gynaecologyjournal.org/reset_password",
+            password_reset_link: `${process.env.REACT_APP_BACKEND_URL}/reset_password`,
           })
           .then(
             (response) => {
@@ -43,7 +42,7 @@ const ForgotPassword = () => {
               emailRef.current.value = "";
               //here have to change because all data setting into the localstroage
               sessionStorage.setItem(
-                "loginGynaecologyJournalData",
+                "loginDentalJournal24Data",
                 JSON.stringify("")
               );
             },

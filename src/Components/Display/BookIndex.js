@@ -9,7 +9,7 @@ import axios from "axios";
 const BookIndex = () => {
   const [books, setBooks] = useState([]);
 
-  const bookBaseData = "https://server.gynaecologyjournal.org/getBookData";
+  const bookBaseData = `${process.env.REACT_APP_BACKEND_URL}/getBookData`;
   useEffect(() => {
     axios.get(bookBaseData).then((response) => {
       setBooks(response.data);

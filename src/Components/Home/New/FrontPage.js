@@ -6,7 +6,7 @@ import axios from "axios";
 import ReactHtmlParser from "react-html-parser";
 
 const FrontPage = () => {
-  const loginData = sessionStorage.getItem("loginGynaecologyJournalData");
+  const loginData = sessionStorage.getItem("loginDentalJournal24Data");
 
   const topImg =
     "https://res.cloudinary.com/dozt7xeil/image/upload/v1687025390/logo_rsefd3.png";

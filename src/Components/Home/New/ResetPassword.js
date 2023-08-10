@@ -42,7 +42,7 @@ const ResetPassword = () => {
     const editPass = { password };
 
     fetch(
-      `https://server.gynaecologyjournal.org/editPass/${sessionGmailVlaue}`,
+      `${process.env.REACT_APP_BACKEND_URL}/editPass/${sessionGmailVlaue}`,
       {
         method: "PATCH",
         headers: {

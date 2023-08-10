@@ -32,7 +32,7 @@ const NewLogin = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://server.gynaecologyjournal.org/getAuthData?phoneNumber=${info?.phoneNumber}&password=${info?.password}`
+        `${process.env.REACT_APP_BACKEND_URL}/getAuthData?phoneNumber=${info?.phoneNumber}&password=${info?.password}`
       );
       const data = await response.json();
 
@@ -56,7 +56,7 @@ const NewLogin = () => {
   useEffect(() => {
     if (loginData.length) {
       sessionStorage.setItem(
-        "loginGynaecologyJournalData",
+        "loginDentalJournal24Data",
         JSON.stringify(loginData)
       );
       history.push("/home");

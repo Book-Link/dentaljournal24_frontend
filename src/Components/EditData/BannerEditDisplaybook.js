@@ -15,7 +15,7 @@ const BannerEditDisplaybook = () => {
     };
 
     // INSERT top image ADMIN AT THE DATABASE
-    fetch("https://server.gynaecologyjournal.org/addDisplayBookTopImage", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/addDisplayBookTopImage`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(displayBookBanner),
@@ -36,7 +36,7 @@ const BannerEditDisplaybook = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          "https://server.gynaecologyjournal.org/DisplayBookTopImage"
+          `${process.env.REACT_APP_BACKEND_URL}/DisplayBookTopImage`
         );
         const data = await response.json();
         setTopBannerImg(data);
@@ -51,7 +51,7 @@ const BannerEditDisplaybook = () => {
   const handleTopImageRemove = (id) => {
     // console.log('deleted',id);
 
-    fetch(`https://server.gynaecologyjournal.org/bookDisplayImgdelete/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/bookDisplayImgdelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
