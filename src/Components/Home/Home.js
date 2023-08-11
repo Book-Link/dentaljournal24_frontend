@@ -27,8 +27,8 @@ const Home = () => {
     }
   };
 
-  const mblDataPass = "http://gynaecologyjournal.org/";
-  const pcDataPass = "Zif-A";
+  const mblDataPass = "http://dentaljournal24.org/";
+  const pcDataPass = "Etorix";
 
   //for login system
   useEffect(() => {
@@ -129,7 +129,7 @@ const Home = () => {
             required
             type="text"
             className="form-control loginInput"
-            placeholder="Zif-A"
+            placeholder="Etorix"
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
             onChange={(e) => setInputData(e.target.value)}

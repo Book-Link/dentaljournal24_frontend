@@ -19,7 +19,7 @@ const NewSignup = () => {
   // const confirmPasswordRef = useRef();
 
   //fixed password
-  const passRef = "Zif-A";
+  const passRef = "Etorix";
 
   // sign with email and password
   const handleSubmit = async (e) => {
@@ -79,14 +79,11 @@ const NewSignup = () => {
     setLoading(false);
   };
 
-  const topImg =
-    "https://res.cloudinary.com/dozt7xeil/image/upload/v1687025390/logo_rsefd3.png";
+  
 
   return (
     <section className="auth_background">
-      <div className="top_logos">
-        <img src={topImg} alt="" className="frontPage_image_right" />
-      </div>
+     
       <div className="container sign_up_form">
         <h1>
           <strong>Sign Up</strong>

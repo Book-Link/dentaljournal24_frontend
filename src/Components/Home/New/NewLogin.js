@@ -74,14 +74,9 @@ const NewLogin = () => {
     }
   };
 
-  const topImg =
-    "https://res.cloudinary.com/dozt7xeil/image/upload/v1687025390/logo_rsefd3.png";
-
+  
   return (
     <section className="auth_background">
-      <div className="top_logos">
-        <img src={topImg} alt="" className="frontPage_image_right" />
-      </div>
       <div className="container login_form">
         <h1>
           <strong>Login</strong>
@@ -112,7 +107,7 @@ const NewLogin = () => {
                 id="exampleInputPassword1"
                 ref={passwordRef}
                 required
-                placeholder="Zif-A"
+                placeholder="Etorix"
               />
               <span onClick={handleToggle} className="eye_icon">
                 <Icon icon={icon} size={25} />

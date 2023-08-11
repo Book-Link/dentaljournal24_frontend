@@ -1,21 +1,20 @@
 /* ********** Frontpage */
 
 @media only screen and (min-width: 961px) {
+  .front_page_background, 
+  .auth_background{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("https://res.cloudinary.com/dozt7xeil/image/upload/v1691774116/DentalJournal/dental_journal_fek0jn.webp"); /* The image used */
+    background-color: #0C1832; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-attachment: fixed;
+     
+  }
 }
-.front_page_background {
-  width: 100%;
-  height: 100vh;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 239, 239, 1) 0%,
-    rgba(251, 217, 217, 1) 10%,
-    rgba(249, 197, 197, 1) 20%,
-    rgba(248, 184, 184, 1) 30%,
-    rgba(244, 140, 141, 1) 100%
-  );
-}
+
 .top_logos {
   display: flex;
   justify-content: center;
@@ -73,27 +72,21 @@
 }
 
 @media only screen and (max-width: 960px) {
-  .frontPage_image_right {
-    width: 100%;
-  }
-  .frontPage_image_bottom {
-    width: 90vw;
-  }
+  .front_page_background, 
+.auth_background {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://res.cloudinary.com/dozt7xeil/image/upload/v1691774116/DentalJournal/dental_journal_fek0jn.webp"); /* The image used */
+  background-color: #cccccc; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-attachment: fixed;
+}
 }
 
 /* ****************** Login page */
-.auth_background {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 239, 239, 1) 0%,
-    rgba(251, 217, 217, 1) 10%,
-    rgba(249, 197, 197, 1) 20%,
-    rgba(248, 184, 184, 1) 30%,
-    rgba(244, 140, 141, 1) 100%
-  );
-}
+
 @media only screen and (max-width: 960px) {
   .auth_background {
     min-height: 100vh;
@@ -143,7 +136,8 @@
 /* *************** Sign up Form */
 .sign_up_form,
 .login_form {
-  padding-bottom: 50px;
+  padding: 150px 2vw;
+  color: #fff;
 }
 
 .success,
