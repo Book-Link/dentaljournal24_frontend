@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./AddBook.css";
 import { Link } from "react-router-dom";
 
-const AddBook = () => {
+const ClientAddBook = () => {
   const [suceesMsg, setSuccessMsg] = useState(false);
   const [message, setMessage] = useState("");
   const bookImgRef = useRef();
@@ -23,7 +23,7 @@ const AddBook = () => {
       bookNumber: bookNumberRef?.current?.value,
       bookLink: bookLinkRef?.current?.value,
       downloadBookLink: downloadBookLinkRef?.current?.value,
-      status: "active",
+      status: "pending",
     };
 
     // INSERT top image ADMIN AT THE DATABASE
@@ -46,14 +46,13 @@ const AddBook = () => {
         }
       });
   };
-
   return (
     <main className="bookupload">
       <section className="container">
-        <Link to="/dashboard" className="back">
+        {/* <Link to="/" className="back">
           {" "}
           <i className="bi bi-skip-backward-fill"></i> Back{" "}
-        </Link>
+        </Link> */}
 
         <div className="row">
           <h2 className="text-center text-bold">Upload Your Journal</h2>
@@ -181,4 +180,4 @@ const AddBook = () => {
   );
 };
 
-export default AddBook;
+export default ClientAddBook;

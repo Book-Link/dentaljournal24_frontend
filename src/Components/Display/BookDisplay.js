@@ -122,10 +122,12 @@ const BookDisplay = () => {
       </section>
 
       <section className="text-center mt-2 mb-2">
-        <h6>Publish Your Case Study:</h6>
-        <span>
+        <Link to="/clientAddBook">
+          <button>Publish Your Case Study</button>
+        </Link>
+        {/* <span>
           <a href="mailto: booklink24@gmail.com">booklink24@gmail.com</a>
-        </span>
+        </span> */}
       </section>
       <section className="container-fluid book_display_body my-3">
         <div className="BookIndex_btn_body">

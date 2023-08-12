@@ -34,6 +34,10 @@ const AdminPage = () => {
         All Users
       </Link>
 
+      <Link to="/pendingClientBooks" className="edit__Pages">
+        All Pending Books
+      </Link>
+
       <button
         className="btn btn-danger admin_logout mt-3"
         onClick={() => handleLogout()}

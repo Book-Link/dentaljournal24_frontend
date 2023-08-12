@@ -21,6 +21,8 @@ import ForgotPassword from "./Components/Home/New/ForgotPassword";
 import ResetPassword from "./Components/Home/New/ResetPassword";
 import PrivateRouteLogin from "./Components/Authentication/PrivateRouteLogin";
 import AllUser from "./Components/EditData/AllUser";
+import ClientAddBook from "./Components/AddData/ClientAddBook";
+import PendingClientsBooks from "./Components/EditData/PendingClientsBooks";
 
 function App() {
   //condition if localstroage.length home otherwise loginpage
@@ -53,6 +55,10 @@ function App() {
           <AddBook />
         </AdminPrivateRoute>
 
+        <PrivateRoute path="/clientAddBook">
+          <ClientAddBook />
+        </PrivateRoute>
+
         <AdminPrivateRoute path="/termsConditionEdit">
           <TermsConditionEdit />
         </AdminPrivateRoute>
@@ -79,6 +85,10 @@ function App() {
 
         <AdminPrivateRoute path="/bannerEditDisplaybook">
           <BannerEditDisplaybook />
+        </AdminPrivateRoute>
+
+        <AdminPrivateRoute path="/pendingClientBooks">
+          <PendingClientsBooks />
         </AdminPrivateRoute>
 
         <PrivateRoute path="/books">
