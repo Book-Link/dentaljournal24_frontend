@@ -40,6 +40,24 @@ const PendingClientsBooks = () => {
       });
   };
 
+  const handleDelete = (bookId) => {
+  fetch(`${process.env.REACT_APP_BACKEND_URL}/deletePendingBook/${bookId}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        // Remove the deleted book from the state
+        setBooks((prevBooks) => prevBooks.filter((book) => book._id !== bookId));
+      } else {
+        console.error("Delete error:", data.message);
+      }
+    })
+    .catch((error) => {
+      console.error("Delete error:", error);
+    });
+};
+
   return (
     <div>
       {!books.length && <h1>No Pending Case Study</h1>}
@@ -73,6 +91,12 @@ const PendingClientsBooks = () => {
                         onClick={() => handleEdit(bookData._id, "active")}
                       >
                         Active Client Case Study
+                      </button>
+
+                          <button
+                        onClick={() => handleDelete(bookData._id)}
+                      >
+                        Delete
                       </button>
                     </span>
                   </aside>
