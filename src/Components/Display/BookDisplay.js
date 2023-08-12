@@ -122,44 +122,68 @@ const BookDisplay = () => {
       </section>
 
       <section className="text-center mt-2 mb-2">
-        <Link to="/clientAddBook">
-          <button>Publish Your Case Study</button>
-        </Link>
         {/* <span>
           <a href="mailto: booklink24@gmail.com">booklink24@gmail.com</a>
         </span> */}
       </section>
       <section className="container-fluid book_display_body my-3">
-        <div className="BookIndex_btn_body">
-          <a
-            className="btn BookIndex_btn"
-            data-bs-toggle="offcanvas"
-            href="#offcanvasExample"
-            role="button"
-            aria-controls="offcanvasExample"
+        <div className="logout-and-publish-btns">
+          <Link to="/clientAddBook">
+            <button className="publish-btn">
+              <i className="bi bi-envelope"></i> Publish Your Case Study
+            </button>
+          </Link>
+          <button
+            className="logout_btn"
+            onClick={() => handeLogoutStatusChange()}
           >
-            <i className="bi bi-list"></i> Index
-          </a>
-          <BookIndex />
+            <div className="logout-icon">
+              <img
+                src="https://res.cloudinary.com/dozt7xeil/image/upload/v1691862021/DentalJournal/power_vl9a2g.png"
+                alt=""
+                className="log-i"
+              />
+            </div>
+            <span className="log-txt">Logout</span>
+          </button>
         </div>
 
-        <form className="search__filter">
-          <div className="srarch_section d-flex justify-content-center">
-            <input
-              type="text"
-              className="searchbar"
-              placeholder="Search title, author name, source name....."
-              onChange={handleSearch}
-            />
+        <form className="my-5">
+          <section className="index-and-searchBtn">
+            <div className="BookIndex_btn_body">
+              <a
+                className="btn BookIndex_btn"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasExample"
+                role="button"
+                aria-controls="offcanvasExample"
+              >
+                <img
+                  src="https://res.cloudinary.com/dozt7xeil/image/upload/v1691864540/DentalJournal/index_vgs1ua.png"
+                  alt=""
+                  className="index-icon"
+                />{" "}
+                Index
+              </a>
+              <BookIndex />
+            </div>
+            <div className="srarch_section d-flex justify-content-center">
+              <input
+                type="text"
+                className="searchbar"
+                placeholder="Search ..."
+                onChange={handleSearch}
+              />
 
-            <button
-              type="submit"
-              className="btn search_btn"
-              onClick={handeSearchSubmit}
-            >
-              Search
-            </button>
-          </div>
+              <button
+                type="submit"
+                className="btn search_btn"
+                onClick={handeSearchSubmit}
+              >
+                <i className="bi bi-search"></i>
+              </button>
+            </div>
+          </section>
           <div className="sideFilter my-4">
             <span className="radioSearch">
               <input
@@ -203,15 +227,6 @@ const BookDisplay = () => {
             </span>
           </div>
         </form>
-
-        <div>
-          <button
-            className="logout_btn"
-            onClick={() => handeLogoutStatusChange()}
-          >
-            Logout
-          </button>
-        </div>
 
         <div className="book_display_main my-3">
           <div className="row bookRow">
