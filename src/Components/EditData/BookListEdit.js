@@ -47,7 +47,7 @@ const BooklistEdit = () => {
       .then((result) => {
         if (result) {
           console.log("deleted successfully");
-          window.location.reload();
+          setBooks((prevBooks) => prevBooks.filter((book) => book._id !== id));
         }
       });
   };
