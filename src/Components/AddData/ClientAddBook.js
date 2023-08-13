@@ -49,10 +49,10 @@ const ClientAddBook = () => {
   return (
     <main className="bookupload">
       <section className="container">
-        {/* <Link to="/" className="back">
+        <Link to="/books" className="back">
           {" "}
           <i className="bi bi-skip-backward-fill"></i> Back{" "}
-        </Link> */}
+        </Link>
 
         <div className="row">
           <h2 className="text-center text-bold">Upload Your Journal</h2>

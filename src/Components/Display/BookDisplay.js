@@ -150,7 +150,7 @@ const BookDisplay = () => {
 
         <form className="my-5">
           <section className="index-and-searchBtn">
-            <div className="BookIndex_btn_body">
+            <div className="bookIndex-btn-body">
               <a
                 className="btn BookIndex_btn"
                 data-bs-toggle="offcanvas"
@@ -167,7 +167,7 @@ const BookDisplay = () => {
               </a>
               <BookIndex />
             </div>
-            <div className="srarch_section d-flex justify-content-center">
+            <div className="search-section d-flex justify-content-center">
               <input
                 type="text"
                 className="searchbar"
@@ -218,12 +218,12 @@ const BookDisplay = () => {
             <span className="radioSearch">
               <input
                 type="radio"
-                id="isbn"
+                id="doi"
                 name="search"
-                value="isbn"
+                value="doi"
                 onClick={() => filterbookCat("isbn")}
               />
-              <label htmlFor="isbn">DOI No.</label>
+              <label htmlFor="doi">DOI No.</label>
             </span>
           </div>
         </form>
