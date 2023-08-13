@@ -52,19 +52,7 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.radioSearch {
-  margin-right: 5%;
-  display: flex;
-  vertical-align: middle;
-}
-.radioSearch input[type="radio"] {
-  height: 20px;
-  width: 20px;
-}
-.radioSearch label {
-  font-weight: bold;
-  margin-left: 5px;
-}
+
 .bookRow {
   padding: 0 10px;
   display: flex;
@@ -242,6 +230,7 @@
   width: 150px;
   height: fit-content;
   text-align: center;
+  font-weight: 900;
 }
 
 .radioSearch input[type="radio"] {
