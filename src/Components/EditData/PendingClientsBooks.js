@@ -3,6 +3,7 @@ import axios from "axios";
 import loader from "../../images/Loading.gif";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "../Display/BookDisplay.css";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const PendingClientsBooks = () => {
   const [books, setBooks] = useState([]);
@@ -62,8 +63,11 @@ const PendingClientsBooks = () => {
   };
 
   return (
-    <div>
-      {!books.length && <h1>No Pending Case Study</h1>}
+    <div className="container">
+      <Link to="/dashboard" className="back">
+        <i className="bi bi-skip-backward-fill"></i> Back{" "}
+      </Link>
+      {!books.length && <h1 className="text-center">No Pending Journal</h1>}
       {books?.map((bookData, index) => (
         <div className="col-12 book_card mb-4" key={bookData?._id}>
           <div className="card book_card_body">

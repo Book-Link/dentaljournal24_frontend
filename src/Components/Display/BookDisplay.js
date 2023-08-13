@@ -130,7 +130,7 @@ const BookDisplay = () => {
         <div className="logout-and-publish-btns">
           <Link to="/clientAddBook">
             <button className="publish-btn">
-              <i className="bi bi-envelope"></i> Publish Your Case Study
+              <i className="bi bi-envelope"></i> Publish Your Journal
             </button>
           </Link>
           <button
