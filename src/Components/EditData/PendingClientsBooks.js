@@ -41,31 +41,33 @@ const PendingClientsBooks = () => {
   };
 
   const handleDelete = (bookId) => {
-  fetch(`${process.env.REACT_APP_BACKEND_URL}/deletePendingBook/${bookId}`, {
-    method: "DELETE",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.success) {
-        // Remove the deleted book from the state
-        setBooks((prevBooks) => prevBooks.filter((book) => book._id !== bookId));
-      } else {
-        console.error("Delete error:", data.message);
-      }
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/deletePendingBook/${bookId}`, {
+      method: "DELETE",
     })
-    .catch((error) => {
-      console.error("Delete error:", error);
-    });
-};
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // Remove the deleted book from the state
+          setBooks((prevBooks) =>
+            prevBooks.filter((book) => book._id !== bookId)
+          );
+        } else {
+          console.error("Delete error:", data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Delete error:", error);
+      });
+  };
 
   return (
     <div>
       {!books.length && <h1>No Pending Case Study</h1>}
       {books?.map((bookData, index) => (
         <div className="col-12 book_card mb-4" key={bookData?._id}>
-          <div class="card book_card_body">
-            <div class="row g-0">
-              <div class="col-3 col-md-6">
+          <div className="card book_card_body">
+            <div className="row g-0">
+              <div className="col-3 col-md-6">
                 <LazyLoadImage
                   src={bookData?.bookImg}
                   alt=""
@@ -75,7 +77,7 @@ const PendingClientsBooks = () => {
                   height={"auto"}
                 />
               </div>
-              <div class="col-9 col-md-6">
+              <div className="col-9 col-md-6">
                 <div className="bookFoot">
                   {/* <p className="b-name pt-2">{bookData?.bookName}</p> */}
                   <p className="b-name mb-0">
@@ -93,9 +95,7 @@ const PendingClientsBooks = () => {
                         Active Client Case Study
                       </button>
 
-                          <button
-                        onClick={() => handleDelete(bookData._id)}
-                      >
+                      <button onClick={() => handleDelete(bookData._id)}>
                         Delete
                       </button>
                     </span>

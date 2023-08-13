@@ -233,9 +233,9 @@ const BookDisplay = () => {
             {/* card */}
             {filteredBooks?.map((bookData, index) => (
               <div className="col-12 book_card mb-4" key={bookData?._id}>
-                <div class="card book_card_body">
-                  <div class="row g-0">
-                    <div class="col-3 col-md-6">
+                <div className="card book_card_body">
+                  <div className="row g-0">
+                    <div className="col-3 col-md-6">
                       <LazyLoadImage
                         src={bookData?.bookImg}
                         alt=""
@@ -245,7 +245,7 @@ const BookDisplay = () => {
                         height={"auto"}
                       />
                     </div>
-                    <div class="col-9 col-md-6">
+                    <div className="col-9 col-md-6">
                       <div className="bookFoot">
                         {/* <p className="b-name pt-2">{bookData?.bookName}</p> */}
                         <p className="b-name mb-0">
