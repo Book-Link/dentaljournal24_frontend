@@ -234,8 +234,8 @@ const BookDisplay = () => {
             {filteredBooks?.map((bookData, index) => (
               <div className="col-12 book_card mb-4" key={bookData?._id}>
                 <div className="card book_card_body">
-                  <div className="row g-0">
-                    <div className="col-3 col-md-6">
+                  <div className="book-card-content">
+                    <div>
                       <LazyLoadImage
                         src={bookData?.bookImg}
                         alt=""
@@ -245,35 +245,36 @@ const BookDisplay = () => {
                         height={"auto"}
                       />
                     </div>
-                    <div className="col-9 col-md-6">
+                    <div>
                       <div className="bookFoot">
-                        {/* <p className="b-name pt-2">{bookData?.bookName}</p> */}
                         <p className="b-name mb-0">
                           <b>{bookData?.bookName}</b>
                         </p>
                         <p className="b-name">{bookData?.authorName}</p>
-                        <aside className="d-flex actionbtn">
-                          {/* <Link to={`/viewPdf/${bookData?._id}`}>
-                            <button className="viewBtn">View</button>
-                          </Link> */}
-                          <span>
+                        <aside className="actionbtn">
+                          <span className="view-btn-span">
                             <a
                               href={bookData.bookLink}
                               target="_blank"
                               rel="noopener noreferrer"
+                              className="view-btn"
                             >
                               View
                             </a>
+                            <i className="bi bi-eye"></i>
                           </span>
-                          /
-                          <button
-                            className="downloadBtn"
-                            onClick={() =>
-                              handleDownload(bookData?.downloadBookLink)
-                            }
-                          >
-                            Download
-                          </button>
+
+                          <span className="download-btn-span">
+                            <button
+                              className="download-Btn"
+                              onClick={() =>
+                                handleDownload(bookData?.downloadBookLink)
+                              }
+                            >
+                              Download
+                            </button>
+                            <i className="bi bi-download"></i>
+                          </span>
                         </aside>
                       </div>
                     </div>
