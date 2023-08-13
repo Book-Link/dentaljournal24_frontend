@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import loader from "../../images/Loading.gif";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "../Display/BookDisplay.css";
 
 const PendingClientsBooks = () => {
   const [books, setBooks] = useState([]);
@@ -66,38 +67,41 @@ const PendingClientsBooks = () => {
       {books?.map((bookData, index) => (
         <div className="col-12 book_card mb-4" key={bookData?._id}>
           <div className="card book_card_body">
-            <div className="row g-0">
-              <div className="col-3 col-md-6">
+            <div className="book-card-content">
+              <div>
                 <LazyLoadImage
                   src={bookData?.bookImg}
-                  alt=""
+                  alt="Book-Img"
                   className="bookImage"
                   placeholderSrc={loader}
                   width={"100%"}
                   height={"auto"}
                 />
               </div>
-              <div className="col-9 col-md-6">
+              <div>
                 <div className="bookFoot">
-                  {/* <p className="b-name pt-2">{bookData?.bookName}</p> */}
                   <p className="b-name mb-0">
                     <b>Book Name: {bookData?.bookName}</b>
                   </p>
                   <p className="b-name">Author Name: {bookData?.authorName}</p>
-                  <aside className="d-flex actionbtn">
-                    {/* <Link to={`/viewPdf/${bookData?._id}`}>
-                            <button className="viewBtn">View</button>
-                          </Link> */}
-                    <span>
+                  <aside className="actionbtn">
+                    <span className="view-btn-span">
                       <button
-                        onClick={() => handleEdit(bookData._id, "active")}
+                        onClick={() => handleEdit(bookData?._id, "active")}
+                        className="btn view-btn"
                       >
-                        Active Client Case Study
+                        Accept
                       </button>
-
-                      <button onClick={() => handleDelete(bookData._id)}>
-                        Delete
+                      <i class="bi bi-check-lg"></i>
+                    </span>
+                    <span className="download-btn-span">
+                      <button
+                        onClick={() => handleDelete(bookData._id)}
+                        className="btn download-Btn"
+                      >
+                        Reject
                       </button>
+                      <i class="bi bi-x"></i>
                     </span>
                   </aside>
                 </div>
