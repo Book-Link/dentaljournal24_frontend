@@ -221,7 +221,7 @@ const BookDisplay = () => {
                 id="doi"
                 name="search"
                 value="doi"
-                onClick={() => filterbookCat("isbn")}
+                onClick={() => filterbookCat("bookName")}
               />
               <label htmlFor="doi">DOI No.</label>
             </span>
