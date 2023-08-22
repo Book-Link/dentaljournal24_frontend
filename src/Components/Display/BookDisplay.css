@@ -7,9 +7,9 @@
   );
 }
 .bannerImg {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
+  width: 100% !important;
+  height: 300px !important;
+  object-fit: cover !important;
 }
 .search-section {
   width: 78%;
